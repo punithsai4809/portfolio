@@ -1,0 +1,23 @@
+[
+  {
+    "company": "Altzen Technologies",
+    "role": "SAP Security Specialist Intern",
+    "period": "Feb 2025 — May 2025",
+    "startYear": "2025",
+    "endYear": "2025",
+    "location": "India",
+    "description": "Managed SAP enterprise security, user access control, authorization roles, and system diagnostic investigations.",
+    "responsibilities": [
+      "Managed SAP user accounts and authorizations using transaction codes SU01, SU10, and SM30",
+      "Created and maintained granular authorization roles using PFCG and SUPC",
+      "Investigated authorization issues using SU53 and analyzed system dumps using ST22",
+      "Monitored active SAP background jobs and user session security"
+    ],
+    "impact": [
+      "Ensured compliant role authorizations and resolved access tickets rapidly across system modules",
+      "Maintained zero unauthorized authorization breaches during the internship tenure"
+    ],
+    "technologies": ["SAP Security", "SU01", "SU10", "PFCG", "SUPC", "SU53", "ST22", "SM30"],
+    "annotation": "Gained deep hands-on expertise in enterprise security and SAP authorization architecture."
+  }
+]

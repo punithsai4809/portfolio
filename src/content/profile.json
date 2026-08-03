@@ -1,0 +1,51 @@
+{
+  "name": "Punith Sai Guttula",
+  "firstName": "Punith Sai",
+  "lastName": "Guttula",
+  "title": "Computer Science Graduate & Software Developer",
+  "headline": "I BUILD DIGITAL SYSTEMS.",
+  "tagline": "Computer Science graduate passionate about full-stack web development, AI integration, and SAP security systems.",
+  "location": {
+    "city": "Tanuku",
+    "country": "India",
+    "coordinates": { "lat": "16.86", "lng": "81.68" }
+  },
+  "email": "punithsai4809@gmail.com",
+  "bio": [
+    "I'm a Computer Science graduate from Sri Vasavi Engineering College with a strong foundation in Python, Django, Web Development, and SAP Security.",
+    "My focus is on engineering production-ready applications — from point-of-sale management systems to AI-powered recommendation chatbots and machine learning tools.",
+    "Whether managing complex authorizations or fine-tuning LLMs with LangChain, I combine analytical precision with a passion for clean, impactful software."
+  ],
+  "mission": "To craft intuitive, high-performance software systems that transform complex workflows into seamless human experiences.",
+  "philosophy": "Software development is a continuous craft of curiosity — building clean code today while constantly learning what's possible tomorrow.",
+  "availability": {
+    "status": "available",
+    "message": "Open to Software Engineering opportunities"
+  },
+  "currentRole": {
+    "title": "CS Graduate & Developer",
+    "company": "Sri Vasavi Engineering College"
+  },
+  "quickFacts": [
+    { "label": "Location", "value": "Tanuku, Andhra Pradesh" },
+    { "label": "Degree", "value": "B.Tech Computer Science" },
+    { "label": "Languages", "value": "English, Telugu" },
+    { "label": "Phone", "value": "+91 8885600283" }
+  ],
+  "statistics": [
+    { "label": "Degree Aggregate", "value": 2025, "prefix": "Class of " },
+    { "label": "Production Projects", "value": 3, "suffix": "+" },
+    { "label": "Certifications Earned", "value": 3, "suffix": "" },
+    { "label": "Hackathons & Contests", "value": 2, "suffix": " Awards" }
+  ],
+  "socials": [
+    { "platform": "GitHub", "url": "https://github.com/punithsai4849-art", "label": "github.com/punithsai4849-art" },
+    { "platform": "LinkedIn", "url": "https://linkedin.com/in/punith-sai-guttula-036345260", "label": "linkedin.com/in/punith-sai-guttula" },
+    { "platform": "Twitter", "url": "https://twitter.com/imaduck1712", "label": "@imaduck1712" },
+    { "platform": "Instagram", "url": "https://instagram.com/punith_hhhh", "label": "@punith_hhhh" }
+  ],
+  "portraitImage": "/images/portrait.jpg",
+  "passportImage": "/images/passport.jpg",
+  "signatureImage": "/images/signature.png",
+  "resumeUrl": "/resume.pdf"
+}

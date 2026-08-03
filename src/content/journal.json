@@ -1,0 +1,77 @@
+[
+  {
+    "title": "The Art of Invisible Software",
+    "slug": "art-of-invisible-software",
+    "date": "2026-07-28",
+    "category": "essay",
+    "tags": ["engineering", "philosophy", "design"],
+    "excerpt": "The best software disappears. You don't notice the plumbing when the water flows. Here's why I think about invisibility as the highest form of engineering craft.",
+    "readingTime": "6 min read",
+    "content": "The best software disappears. You don't notice the plumbing when the water flows. Here's why I think about invisibility as the highest form of engineering craft.\n\nWhen was the last time you thought about how your light switch works? Probably never. That's because it's been engineered to the point of invisibility. The interface is so intuitive, the mechanism so reliable, that it requires zero cognitive load.\n\nThat's what I aspire to build. Software that's so well-crafted, so thoughtfully designed, that users never have to think about it. They just accomplish what they came to do.\n\nThis isn't minimalism for its own sake. It's a deep understanding of the user's mental model, their context, their constraints. It's knowing what to leave out as much as what to put in.\n\nThe irony of good engineering is that no one notices it. The server that never goes down. The page that loads before you blink. The form that anticipates your next input. These aren't accidents — they're the result of obsessive attention to detail.\n\nSo the next time someone says your software 'just works,' take it as the highest compliment."
+  },
+  {
+    "title": "Why I Switched to TypeScript (And Never Looked Back)",
+    "slug": "why-typescript",
+    "date": "2026-06-20",
+    "category": "thought",
+    "tags": ["typescript", "javascript", "productivity"],
+    "excerpt": "JavaScript gave me freedom. TypeScript gave me confidence. Here's the moment I realized types aren't constraints — they're documentation that never lies.",
+    "readingTime": "3 min read",
+    "content": "JavaScript gave me freedom. TypeScript gave me confidence.\n\nI resisted TypeScript for two years. 'It's just extra boilerplate,' I told myself. 'JavaScript is flexible enough.' I was wrong.\n\nThe turning point was a production bug that took 6 hours to find. A function was receiving a string where it expected a number. The fix was one line. The cost was an entire day and a very stressed-out team.\n\nTypeScript would have caught that at compile time. Before any code was deployed. Before any user was affected.\n\nBut TypeScript isn't just about catching bugs. It's about communication. When I write a type interface, I'm documenting my intent in a way that never goes stale. Comments lie. Types don't.\n\nThree years later, I can't imagine writing a project of any meaningful size without TypeScript. The initial investment in types pays dividends every single day — in faster onboarding, fewer bugs, and the confidence to refactor without fear.\n\nIf you're on the fence, start small. Add TypeScript to one file. Let the compiler show you what it finds. I guarantee you'll be hooked."
+  },
+  {
+    "title": "Building Production Django Systems with SAP Integration",
+    "slug": "building-production-django-systems",
+    "date": "2026-05-15",
+    "category": "essay",
+    "tags": ["django", "python", "backend", "sap"],
+    "excerpt": "Architecting reliable Python Django applications that bridge retail POS workflows and strict enterprise SAP access controls.",
+    "readingTime": "5 min read",
+    "content": "Building for production requires a mindset shift from 'making it run' to 'ensuring it survives.' During my work on OceanWaves POS and SAP Security authorizations at Altzen Technologies, I realized that clean architecture is your best defense against production entropy.\n\nIn Django, keeping views light and business logic encapsulated in service modules makes testing painless. When integrating security models like SAP authorization roles (PFCG, SU01), explicitly separating user identities from permission checks prevents security holes.\n\nGreat backend systems are built on predictability: deterministic database migrations, structured logging, and proactive error handling."
+  },
+  {
+    "title": "Interstellar — A Love Letter to Time & Sacrifice",
+    "slug": "interstellar-review",
+    "date": "2026-07-15",
+    "category": "movie-review",
+    "tags": ["cinema", "sci-fi", "nolan"],
+    "excerpt": "Christopher Nolan didn't just make a space movie. He made a meditation on time, loss, and the stubborn human refusal to accept the end.",
+    "rating": 5,
+    "director": "Christopher Nolan",
+    "year": "2014",
+    "genre": "Sci-Fi / Drama",
+    "verdict": "A masterpiece of scientific awe and emotional gravity.",
+    "readingTime": "4 min read",
+    "content": "Christopher Nolan didn't just make a space movie. He made a meditation on time, loss, and the stubborn human refusal to accept the end.\n\nWhat makes Interstellar extraordinary isn't the black holes or the wormholes — it's the scene where Cooper watches 23 years of video messages from his children. In that moment, physics becomes personal. Time dilation isn't a concept anymore; it's a father missing his daughter's life.\n\nThe film asks a question that every engineer, every builder, every creator should sit with: What are you willing to sacrifice for the future?\n\nHans Zimmer's organ score doesn't just accompany the film — it IS the film. Those massive, building chords feel like the universe expanding. I've never experienced sound design that so perfectly mirrors the emotional arc of a story.\n\nNolan understands something profound: the biggest ideas need the smallest, most intimate moments to land. A dusty bookshelf. A wristwatch. A handshake through a tesseract.\n\n5 stars. Not because it's perfect, but because it's important."
+  },
+  {
+    "title": "Mr. Robot — The Most Accurate Tech Series Ever Filmed",
+    "slug": "mr-robot-review",
+    "date": "2026-06-10",
+    "category": "movie-review",
+    "tags": ["television", "cybersecurity", "drama"],
+    "excerpt": "Sam Esmail created a masterpiece that respects actual terminal commands, social engineering, and the isolation of modern digital life.",
+    "rating": 5,
+    "director": "Sam Esmail",
+    "year": "2015 — 2019",
+    "genre": "Tech / Thriller",
+    "verdict": "Unrivaled authenticity in depicting cybersecurity and mental health.",
+    "readingTime": "5 min read",
+    "content": "Mr. Robot is the gold standard for how technology should be depicted on screen. No fake green matrix code, no impossible 'hack the mainframe in 10 seconds' tropes. Every shell script, every nmap scan, and every social engineering vector shown on Elliot's screen is real.\n\nBeyond the technical accuracy, the cinematography by Tod Campbell uses extreme lower-corner framing to evoke psychological isolation. It's a masterclass in visual storytelling."
+  },
+  {
+    "title": "Oppenheimer — The Quantum Weight of Creation",
+    "slug": "oppenheimer-review",
+    "date": "2026-04-20",
+    "category": "movie-review",
+    "tags": ["cinema", "biography", "nolan"],
+    "excerpt": "A kinetic, claustrophobic portrait of scientific breakthrough colliding with political fallout.",
+    "rating": 5,
+    "director": "Christopher Nolan",
+    "year": "2023",
+    "genre": "Biographical / Drama",
+    "verdict": "A terrifyingly beautiful exploration of technical achievement and ethical weight.",
+    "readingTime": "4 min read",
+    "content": "Oppenheimer operates like a three-hour thriller powered entirely by dialogue, close-ups, and Ludwig Göransson's relentless score. The Trinity test sequence — ending in complete silence before the shockwave hits — is one of the most powerful cinematic moments of the decade."
+  }
+]

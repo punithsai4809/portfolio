@@ -1,65 +1,64 @@
-import Image from "next/image";
+import dynamic from "next/dynamic";
 
-export default function Home() {
+// Dynamic imports for code splitting — each section loads independently
+const HeroSection = dynamic(
+  () => import("@/components/sections/HeroSection").then((mod) => ({ default: mod.HeroSection })),
+  { ssr: true }
+);
+const AboutSection = dynamic(
+  () => import("@/components/sections/AboutSection").then((mod) => ({ default: mod.AboutSection })),
+  { ssr: true }
+);
+const ProjectsSection = dynamic(
+  () => import("@/components/sections/ProjectsSection").then((mod) => ({ default: mod.ProjectsSection })),
+  { ssr: true }
+);
+const SkillsSection = dynamic(
+  () => import("@/components/sections/SkillsSection").then((mod) => ({ default: mod.SkillsSection })),
+  { ssr: true }
+);
+const ThoughtsSection = dynamic(
+  () => import("@/components/sections/ThoughtsSection").then((mod) => ({ default: mod.ThoughtsSection })),
+  { ssr: true }
+);
+const MovieReviewsSection = dynamic(
+  () => import("@/components/sections/MovieReviewsSection").then((mod) => ({ default: mod.MovieReviewsSection })),
+  { ssr: true }
+);
+const ExperienceSection = dynamic(
+  () => import("@/components/sections/ExperienceSection").then((mod) => ({ default: mod.ExperienceSection })),
+  { ssr: true }
+);
+const EducationSection = dynamic(
+  () => import("@/components/sections/EducationSection").then((mod) => ({ default: mod.EducationSection })),
+  { ssr: true }
+);
+const MusicSection = dynamic(
+  () => import("@/components/sections/MusicSection").then((mod) => ({ default: mod.MusicSection })),
+  { ssr: true }
+);
+const ContactSection = dynamic(
+  () => import("@/components/sections/ContactSection").then((mod) => ({ default: mod.ContactSection })),
+  { ssr: true }
+);
+
+/**
+ * Main Editorial Documentary Page.
+ * 10 distinct sections composed as a single scrolling narrative.
+ */
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <HeroSection />
+      <AboutSection />
+      <ProjectsSection />
+      <SkillsSection />
+      <ThoughtsSection />
+      <MovieReviewsSection />
+      <ExperienceSection />
+      <EducationSection />
+      <MusicSection />
+      <ContactSection />
+    </>
   );
 }

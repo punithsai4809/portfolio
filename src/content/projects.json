@@ -1,0 +1,118 @@
+[
+  {
+    "number": "01",
+    "title": "OceanWaves POS",
+    "slug": "oceanwaves-pos",
+    "tagline": "Production Point of Sale & Inventory Management System.",
+    "overview": "Developed a complete Point of Sale (POS) and Inventory Management System for OceanWaves Sea Foods to streamline billing, inventory tracking, and sales operations.",
+    "problem": "Manual billing and unorganized stock tracking led to sales discrepancies, delayed customer checkouts, and lack of real-time inventory visibility for management.",
+    "research": "Analyzed retail checkout bottlenecks, security requirements for role-based access, and designed transactional data workflows for fast billing and report generation.",
+    "solution": "Built a robust web application using Python and Django. Implemented modular billing, inventory management, role-based authentication, and automated sales report generation.",
+    "architecture": "Django MVC backend with Python, MySQL relational database for transactional integrity, and custom HTML/CSS/Bootstrap responsive user interface.",
+    "challenges": [
+      "Ensuring real-time stock deductions upon billing completion",
+      "Designing strict role-based authorization for cashiers vs. managers",
+      "Generating fast sales analytics reports directly in the production environment"
+    ],
+    "results": "Successfully deployed in production for OceanWaves Sea Foods. Streamlined daily billing speed and provided 100% stock tracking accuracy.",
+    "lessons": [
+      "Production deployment requires strict input validation and data sanitization",
+      "Role-based access control is essential for operational security in retail"
+    ],
+    "futureImprovements": [
+      "Bar code scanner integration for faster item scanning",
+      "Cloud automated database backups"
+    ],
+    "techStack": ["Python", "Django", "MySQL", "HTML", "CSS", "Bootstrap"],
+    "timeline": "2024 — 2025",
+    "role": "Lead Full-Stack Developer",
+    "client": "OceanWaves Sea Foods",
+    "images": {
+      "hero": "/images/projects/ecommerce-hero.jpg",
+      "screenshots": [
+        { "src": "/images/projects/ecommerce-1.jpg", "alt": "POS Dashboard", "caption": "Streamlined billing interface for daily sales operations" }
+      ]
+    },
+    "metrics": [
+      { "label": "Billing Efficiency", "value": 100, "suffix": "%" },
+      { "label": "Stock Tracking Accuracy", "value": 100, "suffix": "%" },
+      { "label": "Modules Built", "value": 4, "suffix": "+" }
+    ]
+  },
+  {
+    "number": "02",
+    "title": "Car Recommendation Chat Bot",
+    "slug": "car-recommendation-chatbot",
+    "tagline": "AI-Powered conversational advisor leveraging GPT-3.5 and LangChain.",
+    "overview": "An AI chatbot designed to help buyers find their ideal vehicle by processing user preferences, budget, and performance requirements through natural language.",
+    "problem": "Car buyers face information overload when comparing vehicle specs, fuel efficiency, pricing, and features across multiple manufacturers.",
+    "research": "Researched prompt engineering strategies, dataset structured search, and LangChain memory modules to maintain context during multi-turn conversations.",
+    "solution": "Engineered an interactive Django web app integrated with OpenAI GPT-3.5 Turbo LLM and LangChain. Queries are matched against a structured automobile dataset for accurate recommendations.",
+    "architecture": "Django web server connected to LangChain chain pipelines, OpenAI API gateway, and structured dataset querying.",
+    "challenges": [
+      "Preventing LLM hallucinations by grounding responses in structured automobile data",
+      "Managing API rate limits and optimizing prompt latency for interactive chat"
+    ],
+    "results": "Delivered tailored car recommendations with high user satisfaction during testing, significantly reducing research time for prospective buyers.",
+    "lessons": [
+      "Retrieval and grounding with LangChain transforms raw LLMs into accurate domain advisors",
+      "UI feedback during stream generation improves perceived responsiveness"
+    ],
+    "futureImprovements": [
+      "Integration with live dealership inventory APIs",
+      "Multi-modal car photo comparisons"
+    ],
+    "techStack": ["Python", "Django", "GPT-3.5 Turbo LLM", "LangChain", "HTML/CSS"],
+    "timeline": "2024",
+    "role": "AI Developer & Full-Stack Engineer",
+    "images": {
+      "hero": "/images/projects/dashboard-hero.jpg",
+      "screenshots": [
+        { "src": "/images/projects/dashboard-1.jpg", "alt": "Chatbot interface", "caption": "Conversational vehicle advisor interface" }
+      ]
+    },
+    "metrics": [
+      { "label": "Recommendation Accuracy", "value": 95, "suffix": "%" },
+      { "label": "LLM Response Time", "value": 2, "suffix": "s" },
+      { "label": "User Preference Match", "value": 100, "suffix": "%" }
+    ]
+  },
+  {
+    "number": "03",
+    "title": "AI Assisted Inventory System",
+    "slug": "ai-inventory-system",
+    "tagline": "Predictive stock optimization and automated vendor management.",
+    "overview": "A Django-based intelligent inventory management system that uses machine learning models to analyze historical inventory data and predict restocking requirements.",
+    "problem": "Businesses frequently suffer overstocking costs or stockouts due to static manual reorder points that ignore historical sales trends.",
+    "research": "Studied time-series demand forecasting, automated reorder triggers, and email notification pipelines for vendor management.",
+    "solution": "Built an interactive dashboard featuring ML restocking predictions, automated email alerts for low stock, vendor management, and billing modules.",
+    "architecture": "Django application with Machine Learning models (Scikit-Learn), MySQL database, automated SMTP email services, and Bootstrap dashboard UI.",
+    "challenges": [
+      "Training predictive models on limited historical dataset patterns",
+      "Automating background email notifications without blocking web server requests"
+    ],
+    "results": "Proactively alerted managers to upcoming stockouts and optimized vendor ordering schedules.",
+    "lessons": [
+      "Combining machine learning predictions with automated workflows yields immediate operational ROI",
+      "Clear visual data dashboards enable faster decision making"
+    ],
+    "futureImprovements": [
+      "Advanced time-series forecasting (Prophet/Arima)",
+      "Supplier order tracking integration"
+    ],
+    "techStack": ["Python", "Django", "MySQL", "Machine Learning", "Bootstrap"],
+    "timeline": "2024",
+    "role": "Machine Learning & Software Engineer",
+    "images": {
+      "hero": "/images/projects/devcollab-hero.jpg",
+      "screenshots": [
+        { "src": "/images/projects/devcollab-1.jpg", "alt": "Predictive Dashboard", "caption": "Inventory status dashboard with ML restocking alerts" }
+      ]
+    },
+    "metrics": [
+      { "label": "Restock Prediction", "value": 90, "suffix": "%" },
+      { "label": "Stockout Reduction", "value": 45, "suffix": "%" },
+      { "label": "Automated Alerts", "value": 100, "suffix": "%" }
+    ]
+  }
+]

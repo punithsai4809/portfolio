@@ -1,0 +1,48 @@
+{
+  "degrees": [
+    {
+      "institution": "Sri Vasavi Engineering College",
+      "degree": "Bachelor of Technology",
+      "field": "Computer Science & Engineering",
+      "year": "2025",
+      "startYear": "2021",
+      "endYear": "2025",
+      "achievements": [
+        "Secured 2nd Place in the Web Designing Contest during College Technical Fest",
+        "Volunteered in organizing a 24-Hour National-level Hackathon",
+        "Completed production-grade POS and AI Capstone Projects"
+      ]
+    },
+    {
+      "institution": "Sasi Junior College",
+      "degree": "Intermediate (M.P.C)",
+      "field": "Mathematics, Physics, Chemistry",
+      "year": "2021",
+      "startYear": "2019",
+      "endYear": "2021",
+      "achievements": [
+        "Completed Higher Secondary Education with distinction in Mathematics & Science"
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Microsoft Azure Fundamentals",
+      "issuer": "Microsoft",
+      "year": "2024",
+      "url": "https://learn.microsoft.com/certifications/"
+    },
+    {
+      "name": "ServiceNow Certified System Administrator (CSA)",
+      "issuer": "ServiceNow",
+      "year": "2024",
+      "url": "https://www.servicenow.com"
+    },
+    {
+      "name": "Machine Learning Virtual Internship",
+      "issuer": "Skill Dzire",
+      "year": "2024",
+      "url": "https://skilldzire.com"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Programming Languages",
+    "icon": "Code2",
+    "description": "Core software engineering fundamentals.",
+    "skills": [
+      { "name": "Python", "level": "expert" },
+      { "name": "Java", "level": "advanced" },
+      { "name": "SQL", "level": "expert" },
+      { "name": "JavaScript", "level": "advanced" },
+      { "name": "TypeScript", "level": "intermediate" }
+    ]
+  },
+  {
+    "name": "Frameworks & Web",
+    "icon": "Monitor",
+    "description": "Building web apps and user interfaces.",
+    "skills": [
+      { "name": "Django", "level": "expert" },
+      { "name": "HTML5 / CSS3", "level": "expert" },
+      { "name": "Bootstrap", "level": "expert" },
+      { "name": "Tailwind CSS", "level": "advanced" },
+      { "name": "React", "level": "intermediate" },
+      { "name": "Next.js", "level": "intermediate" }
+    ]
+  },
+  {
+    "name": "Databases & Storage",
+    "icon": "Database",
+    "description": "Relational data modeling and queries.",
+    "skills": [
+      { "name": "MySQL", "level": "expert" },
+      { "name": "PostgreSQL", "level": "intermediate" },
+      { "name": "SQLite", "level": "advanced" }
+    ]
+  },
+  {
+    "name": "AI, ML & LLMs",
+    "icon": "Brain",
+    "description": "Intelligent systems and natural language.",
+    "skills": [
+      { "name": "LangChain", "level": "advanced" },
+      { "name": "GPT-3.5 Turbo LLM", "level": "advanced" },
+      { "name": "Machine Learning", "level": "intermediate" },
+      { "name": "Scikit-Learn", "level": "intermediate" }
+    ]
+  },
+  {
+    "name": "SAP & Security",
+    "icon": "Server",
+    "description": "Enterprise access control and authorization.",
+    "skills": [
+      { "name": "SAP Security", "level": "advanced" },
+      { "name": "PFCG & SUPC Roles", "level": "advanced" },
+      { "name": "SU01 / SU10 / SM30", "level": "expert" },
+      { "name": "ST22 & SU53 Diagnostics", "level": "advanced" }
+    ]
+  },
+  {
+    "name": "Tools & Cloud",
+    "icon": "Wrench",
+    "description": "Developer tooling and certifications.",
+    "skills": [
+      { "name": "Git & GitHub", "level": "expert" },
+      { "name": "Microsoft Azure", "level": "advanced" },
+      { "name": "ServiceNow (CSA)", "level": "intermediate" },
+      { "name": "VS Code", "level": "expert" }
+    ]
+  }
+]
