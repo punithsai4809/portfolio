@@ -36,6 +36,13 @@ export const metadata: Metadata = {
     description:
       "An interactive editorial documentary exploring the work and craft of Punith Sai Guttula.",
   },
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    apple: [{ url: "/apple-icon.png" }],
+  },
   robots: {
     index: true,
     follow: true,
