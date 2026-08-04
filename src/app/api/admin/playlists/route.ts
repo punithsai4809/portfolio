@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
 import type { MusicData } from "@/types";
+import { syncToGitHub } from "@/lib/githubSync";
 
 const PLAYLISTS_PATH = path.join(process.cwd(), "src/content/playlists.json");
 
@@ -18,9 +19,25 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const music: MusicData = await request.json();
-    await fs.writeFile(PLAYLISTS_PATH, JSON.stringify(music, null, 2), "utf-8");
-    return NextResponse.json({ success: true });
+    const jsonString = JSON.stringify(music, null, 2);
+
+    // Try local write if filesystem is writable
+    try {
+      await fs.writeFile(PLAYLISTS_PATH, jsonString, "utf-8");
+    } catch {
+      // Ephemeral filesystem on Vercel
+    }
+
+    // Sync to GitHub repo so Vercel auto-deploys updated content
+    const synced = await syncToGitHub(
+      "src/content/playlists.json",
+      jsonString,
+      "admin: update playlists content"
+    );
+
+    return NextResponse.json({ success: true, syncedToGithub: synced });
   } catch (error) {
     return NextResponse.json({ error: "Failed to save playlists file" }, { status: 500 });
   }
 }
+
