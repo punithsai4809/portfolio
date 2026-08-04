@@ -48,12 +48,27 @@ export function getEducation(): Education {
 /** Get all journal posts (merging default JSON + localStorage in browser) */
 export function getJournalPosts(): JournalPost[] {
   let posts: JournalPost[] = journalData as JournalPost[];
+  const sampleSlugs = [
+    "art-of-invisible-software",
+    "why-typescript",
+    "building-production-django-systems",
+    "interstellar-review",
+    "mr-robot-review",
+    "oppenheimer-review",
+  ];
 
   if (typeof window !== "undefined") {
     try {
       const stored = localStorage.getItem(JOURNAL_STORAGE_KEY);
       if (stored) {
-        posts = JSON.parse(stored);
+        const parsed: JournalPost[] = JSON.parse(stored);
+        // Filter out legacy sample posts from local storage
+        posts = parsed.filter((p) => !sampleSlugs.includes(p.slug));
+        // If after filtering empty, fall back to current journalData
+        if (posts.length === 0) {
+          posts = journalData as JournalPost[];
+          localStorage.setItem(JOURNAL_STORAGE_KEY, JSON.stringify(posts));
+        }
       }
     } catch {
       // Fallback to default JSON
