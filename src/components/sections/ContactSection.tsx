@@ -9,7 +9,7 @@ import { RegistrationMark } from "@/components/editorial/RegistrationMark";
 import { Barcode } from "@/components/editorial/Barcode";
 import { IssueLabel } from "@/components/editorial/IssueLabel";
 import { Coordinates } from "@/components/editorial/Coordinates";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, FileText } from "lucide-react";
 
 // Inline SVG components for social brand icons
 function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -139,11 +139,24 @@ export function ContactSection() {
         </div>
 
         {/* Availability */}
-        <div className="flex items-center gap-2 mt-6">
-          <span className="w-2 h-2 rounded-full bg-accent-green animate-pulse-soft" />
-          <span className="editorial-mono text-tiny text-muted tracking-widest">
-            {profile.availability.message}
-          </span>
+        <div className="flex items-center gap-6 mt-8 flex-wrap">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-accent-green animate-pulse-soft" />
+            <span className="editorial-mono text-tiny text-muted tracking-widest">
+              {profile.availability.message}
+            </span>
+          </div>
+
+          <a
+            href={profile.resumeUrl || "/resume.pdf"}
+            download="Punith_Sai_Guttula_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-ink bg-ink text-paper px-4 py-2 text-xs font-mono tracking-wider hover:bg-charcoal transition-colors duration-300"
+          >
+            <FileText size={14} />
+            DOWNLOAD RESUME (PDF)
+          </a>
         </div>
       </div>
 

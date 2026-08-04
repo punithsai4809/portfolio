@@ -12,6 +12,7 @@ import { HandwrittenNote } from "@/components/editorial/HandwrittenNote";
 import { AnnotationArrow } from "@/components/editorial/AnnotationArrow";
 import { Coordinates } from "@/components/editorial/Coordinates";
 import { SectionNumber } from "@/components/editorial/SectionNumber";
+import { Download } from "lucide-react";
 
 /**
  * Hero Section — Full viewport editorial opening.
@@ -115,6 +116,16 @@ export function HeroSection() {
               >
                 Get in Touch
                 <span className="text-xs">→</span>
+              </a>
+              <a
+                href={profile.resumeUrl || "/resume.pdf"}
+                download="Punith_Sai_Guttula_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-ink bg-paper text-ink px-6 py-3 text-sm font-sans font-medium tracking-wide hover:bg-ink hover:text-paper transition-colors duration-300 shadow-sm"
+              >
+                <Download size={16} />
+                Download Resume
               </a>
               <a
                 href="#projects"

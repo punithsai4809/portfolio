@@ -9,6 +9,7 @@ import { SectionNumber } from "@/components/editorial/SectionNumber";
 import { HandwrittenNote } from "@/components/editorial/HandwrittenNote";
 import { RegistrationMark } from "@/components/editorial/RegistrationMark";
 import { MarginNote } from "@/components/editorial/MarginNote";
+import { Download } from "lucide-react";
 
 /**
  * About Section — Editorial profile layout.
@@ -53,6 +54,20 @@ export function AboutSection() {
               </div>
             ))}
           </StaggerChildren>
+
+          {/* Download Resume Link */}
+          <div className="pt-2">
+            <a
+              href={profile.resumeUrl || "/resume.pdf"}
+              download="Punith_Sai_Guttula_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-ink bg-ink text-paper px-4 py-2.5 text-xs font-mono tracking-wider hover:bg-charcoal transition-colors duration-300 w-full justify-center"
+            >
+              <Download size={14} />
+              DOWNLOAD RESUME (PDF)
+            </a>
+          </div>
 
           {/* Passport photo */}
           <div className="relative w-28 h-36 bg-cream mt-8 hidden lg:block overflow-hidden border border-line shadow-sm">
