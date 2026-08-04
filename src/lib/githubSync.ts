@@ -2,10 +2,18 @@ export async function syncToGitHub(
   filePath: string,
   content: string,
   message: string
-): Promise<boolean> {
-  const token = process.env.GITHUB_TOKEN;
+): Promise<{ success: boolean; error?: string }> {
+  // Check for GITHUB_TOKEN or PORTFOLIO_GITHUB_TOKEN or GH_TOKEN
+  const token =
+    process.env.GITHUB_TOKEN ||
+    process.env.PORTFOLIO_GITHUB_TOKEN ||
+    process.env.GH_TOKEN;
+
   if (!token) {
-    return false;
+    return {
+      success: false,
+      error: "GITHUB_TOKEN environment variable is not set on Vercel",
+    };
   }
 
   const repo = process.env.GITHUB_REPOSITORY || "punithsai4809/portfolio";
@@ -21,12 +29,22 @@ export async function syncToGitHub(
       },
       cache: "no-store",
     });
+
     if (getRes.ok) {
       const fileData = await getRes.json();
       sha = fileData.sha;
+    } else if (getRes.status !== 404) {
+      const errText = await getRes.text();
+      return {
+        success: false,
+        error: `GitHub GET SHA failed (${getRes.status}): ${errText}`,
+      };
     }
-  } catch (err) {
-    console.error("Error fetching file SHA from GitHub:", err);
+  } catch (err: any) {
+    return {
+      success: false,
+      error: `Network error fetching SHA: ${err?.message || String(err)}`,
+    };
   }
 
   try {
@@ -46,9 +64,19 @@ export async function syncToGitHub(
       }),
     });
 
-    return putRes.ok;
-  } catch (err) {
-    console.error("Error pushing content update to GitHub:", err);
-    return false;
+    if (putRes.ok) {
+      return { success: true };
+    } else {
+      const errText = await putRes.text();
+      return {
+        success: false,
+        error: `GitHub PUT failed (${putRes.status}): ${errText}`,
+      };
+    }
+  } catch (err: any) {
+    return {
+      success: false,
+      error: `Network error pushing commit: ${err?.message || String(err)}`,
+    };
   }
 }

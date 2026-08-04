@@ -159,11 +159,11 @@ export default function AdminCMSPage() {
     }
 
     setPosts(updated);
-    const { syncedToGithub } = await saveJournalPosts(updated);
+    const { syncedToGithub, githubError } = await saveJournalPosts(updated);
     if (syncedToGithub) {
-      showToast("Saved & Synced to GitHub! Live worldwide in ~20s.");
+      showToast("✓ Saved & Synced to GitHub! Live worldwide in ~20s.");
     } else {
-      showToast("Saved locally. (Check Vercel GITHUB_TOKEN to sync live)");
+      showToast(`⚠ Saved locally only. GitHub Sync Info: ${githubError || "Unknown error"}`);
     }
     resetReviewForm();
   };
@@ -172,22 +172,22 @@ export default function AdminCMSPage() {
   const handleDeletePost = async (slug: string) => {
     const updated = posts.filter((p) => p.slug !== slug);
     setPosts(updated);
-    const { syncedToGithub } = await saveJournalPosts(updated);
+    const { syncedToGithub, githubError } = await saveJournalPosts(updated);
     if (syncedToGithub) {
-      showToast("Entry deleted & Synced to GitHub!");
+      showToast("✓ Entry deleted & Synced to GitHub!");
     } else {
-      showToast("Entry deleted locally.");
+      showToast(`⚠ Entry deleted locally. GitHub Sync Info: ${githubError || "Unknown error"}`);
     }
   };
 
   // Save Now Playing Track
   const handleSaveNowPlaying = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { syncedToGithub } = await savePlaylists(musicData);
+    const { syncedToGithub, githubError } = await savePlaylists(musicData);
     if (syncedToGithub) {
-      showToast("Now Playing track updated & Synced to GitHub!");
+      showToast("✓ Now Playing track updated & Synced to GitHub!");
     } else {
-      showToast("Now Playing track updated locally.");
+      showToast(`⚠ Now Playing updated locally. GitHub Sync Info: ${githubError || "Unknown error"}`);
     }
   };
 
@@ -214,11 +214,11 @@ export default function AdminCMSPage() {
     };
 
     setMusicData(updatedData);
-    const { syncedToGithub } = await savePlaylists(updatedData);
+    const { syncedToGithub, githubError } = await savePlaylists(updatedData);
     if (syncedToGithub) {
-      showToast("Playlist added & Synced to GitHub! Live in ~20s.");
+      showToast("✓ Playlist added & Synced to GitHub! Live in ~20s.");
     } else {
-      showToast("Playlist added locally.");
+      showToast(`⚠ Playlist added locally. GitHub Sync Info: ${githubError || "Unknown error"}`);
     }
 
     setPlTitle("");

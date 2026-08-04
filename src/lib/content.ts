@@ -74,7 +74,7 @@ export function getJournalPostsByCategory(category: string): JournalPost[] {
 }
 
 /** Save journal posts to localStorage and disk via API route */
-export async function saveJournalPosts(posts: JournalPost[]): Promise<{ syncedToGithub: boolean }> {
+export async function saveJournalPosts(posts: JournalPost[]): Promise<{ syncedToGithub: boolean; githubError?: string }> {
   if (typeof window !== "undefined") {
     localStorage.setItem(JOURNAL_STORAGE_KEY, JSON.stringify(posts));
     try {
@@ -84,12 +84,12 @@ export async function saveJournalPosts(posts: JournalPost[]): Promise<{ syncedTo
         body: JSON.stringify(posts),
       });
       const data = await res.json();
-      return { syncedToGithub: !!data.syncedToGithub };
-    } catch {
-      return { syncedToGithub: false };
+      return { syncedToGithub: !!data.syncedToGithub, githubError: data.githubError };
+    } catch (err: any) {
+      return { syncedToGithub: false, githubError: err?.message || String(err) };
     }
   }
-  return { syncedToGithub: false };
+  return { syncedToGithub: false, githubError: "Not in browser environment" };
 }
 
 /** Get music data (merging default JSON + localStorage in browser) */
@@ -111,7 +111,7 @@ export function getPlaylists(): MusicData {
 }
 
 /** Save music data to localStorage and disk via API route */
-export async function savePlaylists(data: MusicData): Promise<{ syncedToGithub: boolean }> {
+export async function savePlaylists(data: MusicData): Promise<{ syncedToGithub: boolean; githubError?: string }> {
   if (typeof window !== "undefined") {
     localStorage.setItem(MUSIC_STORAGE_KEY, JSON.stringify(data));
     try {
@@ -121,12 +121,12 @@ export async function savePlaylists(data: MusicData): Promise<{ syncedToGithub: 
         body: JSON.stringify(data),
       });
       const resData = await res.json();
-      return { syncedToGithub: !!resData.syncedToGithub };
-    } catch {
-      return { syncedToGithub: false };
+      return { syncedToGithub: !!resData.syncedToGithub, githubError: resData.githubError };
+    } catch (err: any) {
+      return { syncedToGithub: false, githubError: err?.message || String(err) };
     }
   }
-  return { syncedToGithub: false };
+  return { syncedToGithub: false, githubError: "Not in browser environment" };
 }
 
 export function getJournalCategories(): string[] {

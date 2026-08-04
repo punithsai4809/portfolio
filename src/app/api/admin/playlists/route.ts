@@ -29,15 +29,18 @@ export async function POST(request: Request) {
     }
 
     // Sync to GitHub repo so Vercel auto-deploys updated content
-    const synced = await syncToGitHub(
+    const result = await syncToGitHub(
       "src/content/playlists.json",
       jsonString,
       "admin: update playlists content"
     );
 
-    return NextResponse.json({ success: true, syncedToGithub: synced });
+    return NextResponse.json({
+      success: true,
+      syncedToGithub: result.success,
+      githubError: result.error,
+    });
   } catch (error) {
     return NextResponse.json({ error: "Failed to save playlists file" }, { status: 500 });
   }
 }
-

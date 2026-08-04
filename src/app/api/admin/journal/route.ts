@@ -29,15 +29,19 @@ export async function POST(request: Request) {
     }
 
     // Sync to GitHub repo so Vercel auto-deploys updated content
-    const synced = await syncToGitHub(
+    const result = await syncToGitHub(
       "src/content/journal.json",
       jsonString,
       "admin: update journal content"
     );
 
-    return NextResponse.json({ success: true, count: posts.length, syncedToGithub: synced });
+    return NextResponse.json({
+      success: true,
+      count: posts.length,
+      syncedToGithub: result.success,
+      githubError: result.error,
+    });
   } catch (error) {
     return NextResponse.json({ error: "Failed to save journal file" }, { status: 500 });
   }
 }
-
