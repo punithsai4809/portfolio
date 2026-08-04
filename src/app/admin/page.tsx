@@ -128,7 +128,7 @@ export default function AdminCMSPage() {
   };
 
   // Save / Update Review or Thought
-  const handleSaveReview = (e: React.FormEvent) => {
+  const handleSaveReview = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!title.trim()) return;
 
@@ -159,28 +159,40 @@ export default function AdminCMSPage() {
     }
 
     setPosts(updated);
-    saveJournalPosts(updated);
-    showToast(editingSlug ? "Review updated successfully!" : "New Review added successfully!");
+    const { syncedToGithub } = await saveJournalPosts(updated);
+    if (syncedToGithub) {
+      showToast("Saved & Synced to GitHub! Live worldwide in ~20s.");
+    } else {
+      showToast("Saved locally. (Check Vercel GITHUB_TOKEN to sync live)");
+    }
     resetReviewForm();
   };
 
   // Delete Review
-  const handleDeletePost = (slug: string) => {
+  const handleDeletePost = async (slug: string) => {
     const updated = posts.filter((p) => p.slug !== slug);
     setPosts(updated);
-    saveJournalPosts(updated);
-    showToast("Entry deleted.");
+    const { syncedToGithub } = await saveJournalPosts(updated);
+    if (syncedToGithub) {
+      showToast("Entry deleted & Synced to GitHub!");
+    } else {
+      showToast("Entry deleted locally.");
+    }
   };
 
   // Save Now Playing Track
-  const handleSaveNowPlaying = (e: React.FormEvent) => {
+  const handleSaveNowPlaying = async (e: React.FormEvent) => {
     e.preventDefault();
-    savePlaylists(musicData);
-    showToast("Now Playing track updated!");
+    const { syncedToGithub } = await savePlaylists(musicData);
+    if (syncedToGithub) {
+      showToast("Now Playing track updated & Synced to GitHub!");
+    } else {
+      showToast("Now Playing track updated locally.");
+    }
   };
 
   // Add Playlist
-  const handleAddPlaylist = (e: React.FormEvent) => {
+  const handleAddPlaylist = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!plTitle.trim() || !plEmbedUrl.trim()) return;
 
@@ -202,8 +214,12 @@ export default function AdminCMSPage() {
     };
 
     setMusicData(updatedData);
-    savePlaylists(updatedData);
-    showToast("Playlist added successfully!");
+    const { syncedToGithub } = await savePlaylists(updatedData);
+    if (syncedToGithub) {
+      showToast("Playlist added & Synced to GitHub! Live in ~20s.");
+    } else {
+      showToast("Playlist added locally.");
+    }
 
     setPlTitle("");
     setPlDescription("");
@@ -211,14 +227,18 @@ export default function AdminCMSPage() {
   };
 
   // Delete Playlist
-  const handleDeletePlaylist = (index: number) => {
+  const handleDeletePlaylist = async (index: number) => {
     const updatedData: MusicData = {
       ...musicData,
       playlists: musicData.playlists.filter((_, i) => i !== index),
     };
     setMusicData(updatedData);
-    savePlaylists(updatedData);
-    showToast("Playlist removed.");
+    const { syncedToGithub } = await savePlaylists(updatedData);
+    if (syncedToGithub) {
+      showToast("Playlist removed & Synced to GitHub!");
+    } else {
+      showToast("Playlist removed locally.");
+    }
   };
 
   // Render Passcode Lock Screen if unauthenticated

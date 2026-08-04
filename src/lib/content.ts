@@ -74,15 +74,22 @@ export function getJournalPostsByCategory(category: string): JournalPost[] {
 }
 
 /** Save journal posts to localStorage and disk via API route */
-export function saveJournalPosts(posts: JournalPost[]): void {
+export async function saveJournalPosts(posts: JournalPost[]): Promise<{ syncedToGithub: boolean }> {
   if (typeof window !== "undefined") {
     localStorage.setItem(JOURNAL_STORAGE_KEY, JSON.stringify(posts));
-    fetch("/api/admin/journal", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(posts),
-    }).catch(() => {});
+    try {
+      const res = await fetch("/api/admin/journal", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(posts),
+      });
+      const data = await res.json();
+      return { syncedToGithub: !!data.syncedToGithub };
+    } catch {
+      return { syncedToGithub: false };
+    }
   }
+  return { syncedToGithub: false };
 }
 
 /** Get music data (merging default JSON + localStorage in browser) */
@@ -104,15 +111,22 @@ export function getPlaylists(): MusicData {
 }
 
 /** Save music data to localStorage and disk via API route */
-export function savePlaylists(data: MusicData): void {
+export async function savePlaylists(data: MusicData): Promise<{ syncedToGithub: boolean }> {
   if (typeof window !== "undefined") {
     localStorage.setItem(MUSIC_STORAGE_KEY, JSON.stringify(data));
-    fetch("/api/admin/playlists", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    }).catch(() => {});
+    try {
+      const res = await fetch("/api/admin/playlists", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const resData = await res.json();
+      return { syncedToGithub: !!resData.syncedToGithub };
+    } catch {
+      return { syncedToGithub: false };
+    }
   }
+  return { syncedToGithub: false };
 }
 
 export function getJournalCategories(): string[] {
